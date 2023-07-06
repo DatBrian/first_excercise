@@ -67,7 +67,7 @@ BodegasRouter.post('/', async (req, res) => {
 
         await connection.query(query, values);
 
-        res.json( req.body );
+        res.json({ message: 'Bodega creada exitosamente' });
     } catch (error) {
         console.error('Error al crear la bodega:', error);
         res.status(500).json({ error: 'Ocurrió un error al crear la bodega' });

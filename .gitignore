@@ -1,6 +1,4 @@
-# Ignore node_modules folder
 node_modules/
-
-# Ignore package-lock.json (or yarn.lock for Yarn)
 /package-lock.json
+/.env
 

@@ -110,8 +110,6 @@ CREATE TABLE `inventarios` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_bodega` (`id_bodega`),
-  UNIQUE KEY `id_producto` (`id_producto`),
   KEY `fk_inventarios_users_created` (`created_by`),
   KEY `fk_inventarios_users_update` (`update_by`),
   CONSTRAINT `fk_inventarios_bodegas` FOREIGN KEY (`id_bodega`) REFERENCES `bodegas` (`id`),

@@ -34,7 +34,6 @@ BodegasRouter.get('/', async (req, res) => {
 //? Crear bodega
 BodegasRouter.post('/', async (req, res) => {
     try {
-        console.log(req.body);
         const {
             nombre,
             id_responsable,

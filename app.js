@@ -8,12 +8,13 @@ app.use(express.json())
 
 //? Routes
 import BodegasRouter from './routes/BodegasRoutes.js';
-
 app.use("/bodegas", BodegasRouter);
 
-const config = JSON.parse(process.env.CONFIG);
+import ProductosRouter from './routes/ProductosRoutes.js';
+app.use("/productos", ProductosRouter);
 
 //? Levantar el servidor
+const config = JSON.parse(process.env.CONFIG);
 app.listen(config, () => {
     console.log(`Servidor listo en http://${config.hostname}:${config.port}`);
 });

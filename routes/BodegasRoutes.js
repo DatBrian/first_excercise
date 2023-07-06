@@ -31,6 +31,47 @@ BodegasRouter.get('/', async (req, res) => {
     }
 })
 
+//? Crear bodega
+BodegasRouter.post('/', async (req, res) => {
+    try {
+        console.log(req.body);
+        const {
+            nombre,
+            id_responsable,
+            estado,
+            created_by,
+            update_by,
+            deleted_at
+        } = req.body;
 
+        const created_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        const updated_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+        const query = `
+        INSERT INTO bodegas
+        (nombre, id_responsable, estado, created_by, update_by, created_at, updated_at, deleted_at)
+        VALUES
+        (?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+
+        const values = [
+            nombre,
+            id_responsable,
+            estado,
+            created_by,
+            update_by,
+            created_at,
+            updated_at,
+            deleted_at
+        ];
+
+        await connection.query(query, values);
+
+        res.json( req.body );
+    } catch (error) {
+        console.error('Error al crear la bodega:', error);
+        res.status(500).json({ error: 'Ocurrió un error al crear la bodega' });
+    }
+})
 
 export default BodegasRouter;

@@ -78,7 +78,7 @@ CREATE TABLE `historiales` (
   CONSTRAINT `fk_historiales_bodegas_destino` FOREIGN KEY (`id_bodega_destino`) REFERENCES `bodegas` (`id`),
   CONSTRAINT `fk_historiales_bodegas_origen` FOREIGN KEY (`id_bodega_origen`) REFERENCES `bodegas` (`id`),
   CONSTRAINT `fk_historiales_inventarios` FOREIGN KEY (`id_inventario`) REFERENCES `inventarios` (`id`),
-  CONSTRAINT `fk_historiales_users_created` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
+  CONSTRAINT `fk_historiales_ users_created` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_historiales_users_update` FOREIGN KEY (`update_by`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

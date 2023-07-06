@@ -1,3 +1,4 @@
+
 //? Dependencies
 import dotenv from 'dotenv';
 import express from 'express';
@@ -12,8 +13,9 @@ import BodegasRouter from './routes/BodegasRoutes.js';
 
 app.use("/bodegas", BodegasRouter);
 
+const config = JSON.parse(process.env.CONFIG);
 
 //? Levantar el servidor
-app.listen(process.env.CONFIG, () => {
-    console.log(`Servidor listo en ${host}:${port}`);
+app.listen(config, () => {
+    console.log(`Servidor listo en http://${config.hostname}:${config.port}`);
 });

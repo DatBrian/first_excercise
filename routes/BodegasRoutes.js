@@ -1,15 +1,12 @@
 //? Importaciones y declaraciones
-import mysql from 'mysql2';
+import mysql from 'mysql2/promise';
 import { Router } from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const BodegasRouter = Router();
 let connection = undefined;
-const config = {
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DB_NAME
-};
+const config = JSON.parse(process.env.CONNECT);
 
 //? Conexión a la base de datos
 BodegasRouter.use((req, res, next) => {

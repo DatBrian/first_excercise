@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "node project with a database and its respective queries",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "npm install && nodemon --quiet app.js"
+    "start": "npm install && nodemon --quiet app.js",
+    "nodemon": "nodemon --quiet app.js"
   },
   "author": "campuslands inc. by: @DatBrian",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "16.3.1",
+    "express": "4.18.2",
     "mysql2": "3.4.5",
     "nodemon": "2.0.22"
   }
